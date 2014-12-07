@@ -56,7 +56,7 @@ if command -v hostname >/dev/null 2>&1; then
 	host="$(hostname)"
 elif command -v uci get system.@system[0].hostname >/dev/null 2>&1; then #OpenWRT support
  	host="$(uci get system.@system[0].hostname)"
-elif [ -f /proc/sys/kernel/hostname ]; then #
+elif [ -f /proc/sys/kernel/hostname ]; then #Last try to determine hostname
 	host="$(cat /proc/sys/kernel/hostname)"
 else
 	exit 1 # Unable to determine hostname
