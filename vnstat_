@@ -27,19 +27,19 @@ unit_get_factor ()
 	local unit="$(echo "$1" | awk '{print tolower($0)}')"
 	local factor=1
 	if [ "$unit" = 'kib' ]; then
-		factor=1024
+		factor=1000
 	elif [ "$unit" = 'mib' ]; then
-		factor=1048576
+		factor=1000000
 	elif [ "$unit" = 'gib' ]; then
-		factor=1073741824
+		factor=1000000000
 	elif [ "$unit" = 'tib' ]; then
-		factor=1099511627776
+		factor=1000000000000
 	elif [ "$unit" = 'pib' ]; then
-		factor=1125899906842624
+		factor=1000000000000000
 	elif [ "$unit" = 'eib' ]; then
-		factor=1152921504606846976
+		factor=1000000000000000000
 	elif [ "$unit" = 'zib' ]; then
-		factor=1180591620717411303424
+		factor=1000000000000000000000
 	fi
 	printf "$factor"
 }
@@ -82,12 +82,12 @@ down.label received
 down.type GAUGE
 down.min 0
 down.graph no
-down.cdef down,8,/
+down.cdef down,1,/
 up.label traffic in/out
 up.type GAUGE
 up.min 0
 up.negative down
-up.cdef up,8,/
+up.cdef up,1,/
 EOF
         exit 0;;
 esac
