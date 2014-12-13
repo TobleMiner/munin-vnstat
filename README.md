@@ -1,7 +1,7 @@
 munin-vnstat
 ============
 
-A small munin vnstat plugin designed to work on OpenWrt devices with ash and a minimal vnstat version.
+A small munin vnstat plugin designed to work on OpenWrt devices with ash and a minimal vnstat installation.
 
 At the time being it only shows the total accumulated traffic for a network interface. Might add some more functionality in the future though.
 
